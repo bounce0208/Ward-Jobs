@@ -70,12 +70,13 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);fon
 .jrow.low::before{background:var(--low);}
 .jrow.done{opacity:.3;}
 .jrow.done .jn{text-decoration:line-through;}
-.jrow.waiting{opacity:.75;}
+.jrow.waiting{opacity:.85;}
 .jrow:active{background:var(--s3);}
 .jchk{width:18px;height:18px;border-radius:50%;border:1.5px solid var(--border2);flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;}
 .jrow.done .jchk{background:var(--low);border-color:var(--low);}
 .jrow.done .jchk::after{content:'';width:4px;height:7px;border-right:2px solid #000;border-bottom:2px solid #000;transform:rotate(45deg) translate(-1px,-1px);display:block;}
-.jrow.waiting .jchk{border-color:var(--wl);}
+.jrow.waiting .jchk{border-color:#818cf8;background:linear-gradient(to right,#818cf8 50%,transparent 50%);}
+
 .jbody{flex:1;min-width:0;}
 .jmeta{display:flex;align-items:center;gap:5px;margin-bottom:3px;}
 .jtb{font-size:10px;font-weight:600;padding:1px 6px;border-radius:4px;}
