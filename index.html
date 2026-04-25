@@ -504,7 +504,7 @@ function rList(){
   secs.forEach(function(sec){
     var sp=filt.filter(function(p){return p.bayId===sec.id;});
     var ap=pts.filter(function(p){return p.bayId===sec.id;});
-    if(!sp.length&&S.filter!=='all')return;
+    if(!sp.length)return;
     var pen=ap.reduce(function(n,p){return n+(p.jobs||[]).filter(function(j){return j.status==='pending';}).length;},0);
     html+='<div class="bg"><div class="bl">'+e(sec.name)+'<span class="bc">'+pen+' pending</span></div>';
     if(!sp.length){html+='<div style="font-size:13px;color:var(--text3);padding:4px 2px;font-style:italic;">No patients</div>';}
