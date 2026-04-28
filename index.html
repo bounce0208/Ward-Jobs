@@ -506,6 +506,15 @@ function rList(){
     var ap=pts.filter(function(p){return p.bayId===sec.id;});
     if(!sp.length)return;
     var pen=ap.reduce(function(n,p){return n+(p.jobs||[]).filter(function(j){return j.status==='pending';}).length;},0);
+    // sort by bed number naturally — extract leading integer, fall back to string compare
+    sp.sort(function(a,b){
+      var an=parseInt((a.bed||'').replace(/\D/g,''),10);
+      var bn=parseInt((b.bed||'').replace(/\D/g,''),10);
+      if(!isNaN(an)&&!isNaN(bn)) return an-bn;
+      if(!isNaN(an)) return -1;
+      if(!isNaN(bn)) return 1;
+      return (a.bed||'').localeCompare(b.bed||'');
+    });
     html+='<div class="bg"><div class="bl">'+e(sec.name)+'<span class="bc">'+pen+' pending</span></div>';
     if(!sp.length){html+='<div style="font-size:13px;color:var(--text3);padding:4px 2px;font-style:italic;">No patients</div>';}
     else{sp.forEach(function(p){html+=bPC(p);});}
