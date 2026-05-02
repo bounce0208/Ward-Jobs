@@ -168,7 +168,61 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);fon
 .tcr{display:flex;align-items:center;gap:8px;}
 .tcr input[type=color]{width:34px;height:34px;border:1px solid var(--border2);border-radius:6px;padding:2px;background:var(--s1);cursor:pointer;-webkit-appearance:none;}
 .tcr input[type=text]{flex:1;background:var(--s1);border:1px solid var(--border2);border-radius:var(--rs);padding:7px 10px;color:var(--text);font-size:13px;font-family:'DM Mono',monospace;outline:none;}
-.mbg{position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:300;display:none;align-items:flex-end;justify-content:center;backdrop-filter:blur(4px);}
+/* HANDOVER */
+.ho-scr{flex:1;overflow-y:auto;padding:12px 16px 80px;}
+.ho-pick-sec{margin-bottom:16px;}
+.ho-pick-lbl{font-family:'DM Mono',monospace;font-size:11px;color:var(--text3);letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.ho-pick-lbl::after{content:'';flex:1;height:1px;background:var(--border);}
+.ho-pick-row{display:flex;align-items:center;gap:10px;background:var(--s2);border:1px solid var(--border);border-radius:var(--rs);padding:10px 12px;margin-bottom:5px;}
+.ho-pick-info{flex:1;}
+.ho-pick-name{font-size:14px;color:var(--text);}
+.ho-pick-sub{font-size:12px;color:var(--text2);margin-top:2px;}
+.ho-add-ptbtn{font-size:12px;font-weight:500;padding:5px 12px;border-radius:20px;border:1px solid rgba(74,222,128,.3);background:rgba(74,222,128,.1);color:#86efac;cursor:pointer;white-space:nowrap;}
+.ho-entry{background:var(--s1);border:1px solid var(--border2);border-radius:var(--r);margin-bottom:10px;overflow:hidden;}
+.ho-entry-hdr{display:flex;align-items:center;gap:10px;padding:11px 14px;}
+.ho-entry-name{font-size:14px;font-weight:500;flex:1;}
+.ho-entry-loc{font-family:'DM Mono',monospace;font-size:11px;color:var(--text2);}
+.ho-entry-del{color:var(--text3);font-size:18px;cursor:pointer;padding:0 4px;}
+.ho-entry-body{padding:12px 14px;border-top:1px solid var(--border);}
+.hof{margin-bottom:12px;}
+.hof label{display:block;font-size:11px;color:var(--text2);margin-bottom:5px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;}
+.hof input,.hof textarea{width:100%;background:var(--s2);border:1px solid var(--border2);border-radius:var(--rs);padding:9px 12px;color:var(--text);font-size:14px;font-family:'DM Sans',sans-serif;outline:none;}
+.hof input:focus,.hof textarea:focus{border-color:rgba(74,222,128,.4);}
+.hof textarea{height:80px;resize:none;line-height:1.5;}
+.ho-selects{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;}
+.ho-sel-grp{display:flex;flex-direction:column;gap:5px;}
+.ho-sel-lbl{font-size:11px;color:var(--text2);font-weight:500;letter-spacing:.04em;text-transform:uppercase;}
+.ho-opts{display:flex;flex-wrap:wrap;gap:5px;}
+.ho-opt{font-size:11px;font-weight:500;padding:4px 9px;border-radius:5px;border:1px solid var(--border2);background:var(--s2);color:var(--text2);cursor:pointer;}
+.ho-opt.on-no-ceil{background:var(--s3);color:var(--text);}
+.ho-opt.on-l1{background:rgba(74,222,128,.1);border-color:rgba(74,222,128,.3);color:#4ade80;}
+.ho-opt.on-l2{background:rgba(251,191,36,.1);border-color:rgba(251,191,36,.3);color:#fbbf24;}
+.ho-opt.on-l3{background:rgba(248,113,113,.12);border-color:rgba(248,113,113,.3);color:#f87171;}
+.ho-opt.on-for-resus{background:rgba(74,222,128,.1);border-color:rgba(74,222,128,.3);color:#4ade80;}
+.ho-opt.on-not-resus{background:rgba(248,113,113,.12);border-color:rgba(248,113,113,.3);color:#f87171;}
+.ho-job-row{display:flex;align-items:center;gap:8px;background:var(--s2);border:1px solid var(--border);border-radius:var(--rs);padding:7px 10px;margin-bottom:4px;}
+.ho-job-txt{flex:1;font-size:13px;color:var(--text2);}
+.ho-job-del{color:var(--text3);font-size:16px;cursor:pointer;padding:0 4px;}
+.ho-add-job-row{display:flex;gap:8px;margin-top:6px;}
+.ho-add-job-inp{flex:1;background:var(--s2);border:1px solid var(--border);border-radius:var(--rs);padding:7px 10px;color:var(--text);font-size:13px;font-family:'DM Sans',sans-serif;outline:none;}
+.ho-add-job-btn{background:var(--s3);border:1px solid var(--border2);border-radius:var(--rs);padding:7px 12px;color:var(--text2);font-size:13px;cursor:pointer;font-family:'DM Sans',sans-serif;}
+.ho-new-btn{width:100%;padding:12px;background:transparent;border:1px dashed var(--border2);border-radius:var(--r);color:var(--text3);font-size:14px;font-family:'DM Sans',sans-serif;cursor:pointer;margin-bottom:14px;}
+.ho-sum-btn{width:100%;padding:13px;background:linear-gradient(135deg,#4ade80,#22c55e);border:none;border-radius:var(--r);color:#000;font-size:15px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;margin-bottom:14px;}
+.ceil-badge,.resus-badge{font-size:9px;font-weight:600;padding:2px 6px;border-radius:4px;}
+.ceil-l1{background:rgba(74,222,128,.1);color:#4ade80;border:1px solid rgba(74,222,128,.25);}
+.ceil-l2{background:rgba(251,191,36,.1);color:#fbbf24;border:1px solid rgba(251,191,36,.25);}
+.ceil-l3{background:rgba(248,113,113,.12);color:#f87171;border:1px solid rgba(248,113,113,.25);}
+.resus-not{background:rgba(248,113,113,.12);color:#f87171;border:1px solid rgba(248,113,113,.25);}
+.ho-sum-mod{background:var(--s1);border:1px solid var(--border2);border-top-left-radius:18px;border-top-right-radius:18px;width:100%;max-height:90vh;display:flex;flex-direction:column;}
+.ho-sum-scr{flex:1;overflow-y:auto;padding:0 20px 16px;}
+.ho-sum-entry{margin-bottom:18px;border-bottom:1px solid var(--border);padding-bottom:14px;}
+.ho-sum-entry:last-child{border-bottom:none;}
+.ho-sum-name{font-size:14px;font-weight:600;color:var(--text);margin-bottom:2px;}
+.ho-sum-loc{font-family:'DM Mono',monospace;font-size:11px;color:var(--text2);margin-bottom:6px;}
+.ho-sum-line{font-size:13px;color:var(--text2);margin-bottom:3px;line-height:1.4;}
+.ho-sum-line span{color:var(--text);}
+.ho-copy-btn{width:calc(100% - 40px);margin:0 20px 20px;padding:12px;background:linear-gradient(135deg,#4ade80,#22c55e);border:none;border-radius:var(--r);color:#000;font-size:15px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;flex-shrink:0;}
+/* MODALS */
 .mbg.open{display:flex;}
 .modal{background:var(--s1);border:1px solid var(--border2);border-top-left-radius:18px;border-top-right-radius:18px;width:100%;max-height:88vh;overflow-y:auto;padding:20px 20px 40px;}
 .mh{width:36px;height:4px;background:var(--s4);border-radius:2px;margin:0 auto 16px;}
@@ -209,8 +263,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);fon
     <div class="hdr-top">
       <span class="wm">Ward Jobs</span>
       <div style="display:flex;align-items:center;gap:8px;">
-        <span style="font-size:11px;color:var(--text3);cursor:pointer;padding:3px 10px;border:1px solid var(--border2);border-radius:20px;" onclick="showHO()">Handover</span>
-        <span class="wpill none" id="wpill" onclick="gNav('ward')">No ward</span>
+      <span class="wpill none" id="wpill" onclick="gNav('ward')">No ward</span>
       </div>
     </div>
     <div class="chips">
@@ -250,6 +303,20 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);fon
         <div class="so on-active" data-v="active" onclick="pickPS(this)">Active</div>
         <div class="so" data-v="mofd" onclick="pickPS(this)">MOFD</div>
         <div class="so" data-v="discharge" onclick="pickPS(this)">Discharge</div>
+      </div>
+    </div>
+    <div class="field"><label>Ceiling of care</label>
+      <div class="sg" id="ptceil">
+        <div class="so on-no-ceil" data-v="none" onclick="pickPCeil(this)">None</div>
+        <div class="so" data-v="l1" onclick="pickPCeil(this)">Level 1</div>
+        <div class="so" data-v="l2" onclick="pickPCeil(this)">Level 2</div>
+        <div class="so" data-v="l3" onclick="pickPCeil(this)">Level 3</div>
+      </div>
+    </div>
+    <div class="field"><label>Resus status</label>
+      <div class="sg" id="ptresus">
+        <div class="so on-for-resus" data-v="for" onclick="pickPResus(this)">For resus</div>
+        <div class="so" data-v="not" onclick="pickPResus(this)">Not for resus</div>
       </div>
     </div>
   </div>
@@ -324,9 +391,31 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);fon
   <div class="bnav" id="bn3"></div>
 </div>
 
+<div class="screen" id="s-ho">
+  <div class="hdr" style="padding-bottom:12px;">
+    <div class="hdr-top" style="margin-bottom:0;">
+      <span class="wm">Handover</span>
+      <span id="ho-count" style="font-family:'DM Mono',monospace;font-size:11px;color:var(--text3);"></span>
+    </div>
+  </div>
+  <div class="ho-scr" id="ho-scr"></div>
+  <div class="bnav" id="bn4"></div>
 </div>
 
-<div class="mbg" id="jmod" onclick="cJM(event)">
+</div>
+
+<!-- HANDOVER SUMMARY MODAL -->
+<div class="mbg" id="ho-sum-mod-bg" onclick="cHoSum(event)">
+  <div class="ho-sum-mod">
+    <div style="padding:20px 20px 10px;flex-shrink:0;">
+      <div class="mh"></div>
+      <h3 style="margin-bottom:4px;">Handover summary</h3>
+      <div style="font-size:12px;color:var(--text2);" id="ho-sum-sub"></div>
+    </div>
+    <div class="ho-sum-scr" id="ho-sum-content"></div>
+    <button class="ho-copy-btn" onclick="copyHoSum()">Copy to clipboard</button>
+  </div>
+</div> onclick="cJM(event)">
   <div class="modal">
     <div class="mh"></div>
     <h3 id="jmt"></h3>
@@ -364,30 +453,20 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);fon
   </div>
 </div>
 
-<div class="mbg" id="homod" onclick="cHO(event)">
-  <div class="homod">
-    <div style="padding:20px 20px 10px;flex-shrink:0;">
-      <div class="mh"></div>
-      <h3 style="margin-bottom:4px;">Handover summary</h3>
-      <div style="font-size:12px;color:var(--text2);" id="hosub"></div>
-    </div>
-    <div class="hoscr" id="hocont"></div>
-    <button class="hocopy" onclick="copyHO()">Copy to clipboard</button>
-  </div>
-</div>
 
 <div class="toast" id="toast"></div>
 
 <script>
 var DW={id:'w1',name:'My Ward',bays:[{id:'bA',name:'Bay A',beds:6},{id:'bB',name:'Bay B',beds:6},{id:'bC',name:'Bay C',beds:6},{id:'bD',name:'Bay D',beds:6}],sideRooms:[{id:'sr1',name:'SR 1',linkedBay:'bA'},{id:'sr2',name:'SR 2',linkedBay:'bB'},{id:'sr3',name:'SR 3',linkedBay:'bC'},{id:'sr4',name:'SR 4',linkedBay:'bD'}]};
 var DJT=['Bloods','Imaging','Referral','TTO','Drug chart','Cannula','Procedure','Family update','Other'];
-var S={patients:[],activeWardId:null,wards:[JSON.parse(JSON.stringify(DW))],jobTypes:[].concat(DJT),filter:'all',nextPid:1,nextJid:1,activeTheme:'forest',themeOverrides:{}};
+var S={patients:[],activeWardId:null,wards:[JSON.parse(JSON.stringify(DW))],jobTypes:[].concat(DJT),hoEntries:[],filter:'all',nextPid:1,nextJid:1,activeTheme:'forest',themeOverrides:{}};
 function sv(){try{localStorage.setItem('wj3',JSON.stringify(S));}catch(e){}}
 function ld(){
   try{var d=localStorage.getItem('wj3');if(d)S=Object.assign(S,JSON.parse(d));}catch(e){}
   if(!S.wards||!S.wards.length)S.wards=[JSON.parse(JSON.stringify(DW))];
   if(!S.jobTypes||!S.jobTypes.length)S.jobTypes=[].concat(DJT);
   if(!S.themeOverrides)S.themeOverrides={};
+  if(!S.hoEntries)S.hoEntries=[];
   if(!S.activeWardId&&S.wards.length)S.activeWardId=S.wards[0].id;
   if(!S.nextPid)S.nextPid=S.patients.length?Math.max.apply(null,S.patients.map(function(p){return p.id;}))+1:1;
   if(!S.nextJid){var mx=1;S.patients.forEach(function(p){(p.jobs||[]).forEach(function(j){if(j.id>=mx)mx=j.id+1;});});S.nextJid=mx;}
@@ -410,12 +489,13 @@ function aPts(){var w=gW();if(!w)return[];return S.patients.filter(function(p){r
 
 // NAV
 var NAV=[
-  {id:'tasks',l:'Jobs',s:'s-list',b:'bn1',ic:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg>'},
-  {id:'ward', l:'Ward',s:'s-ward',b:'bn2',ic:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>'},
-  {id:'set',  l:'',    s:'s-set', b:'bn3',ic:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>'},
+  {id:'tasks',l:'Jobs',    s:'s-list',b:'bn1',ic:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg>'},
+  {id:'ho',   l:'Handover',s:'s-ho',  b:'bn4',ic:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>'},
+  {id:'ward', l:'Ward',    s:'s-ward',b:'bn2',ic:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>'},
+  {id:'set',  l:'',        s:'s-set', b:'bn3',ic:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>'},
 ];
 function bNavs(){
-  ['bn1','bn2','bn3'].forEach(function(bid){
+  ['bn1','bn2','bn3','bn4'].forEach(function(bid){
     var el=document.getElementById(bid);el.className='bnav';
     el.innerHTML=NAV.map(function(n){return '<button class="nb" data-nav="'+n.id+'" onclick="gNav(\''+n.id+'\')">'+n.ic+n.l+'</button>';}).join('');
   });
@@ -426,6 +506,7 @@ function gNav(id){
   document.getElementById(it.s).classList.add('active');
   document.querySelectorAll('.nb').forEach(function(b){b.classList.toggle('active',b.dataset.nav===id);});
   if(id==='tasks')rList();
+  if(id==='ho')rHo();
   if(id==='ward')rWardSel();
   if(id==='set')rSet();
 }
@@ -434,9 +515,11 @@ function uPill(){var p=document.getElementById('wpill');var w=gW();if(!w){p.text
 function bBayDrop(){var s=document.getElementById('ptbay');var w=gW();var secs=w?wSecs(w):[];s.innerHTML=secs.map(function(x){return'<option value="'+e(x.id)+'">'+e(x.name)+'</option>';}).join('');}
 
 // PT FORM
-var ePtId=null,cPS='active';
+var ePtId=null,cPS='active',cPCeil='none',cPResus='for';
 function pickPS(el){cPS=el.dataset.v;document.querySelectorAll('#ptsg .so').forEach(function(o){o.className='so';});el.classList.add('on-'+cPS);}
-function rsPtF(){ePtId=null;cPS='active';document.getElementById('ptftitle').textContent='Add patient';document.getElementById('ptbed').value='';document.getElementById('ptinit').value='';document.getElementById('ptdx').value='';document.querySelectorAll('#ptsg .so').forEach(function(o){o.className='so';});document.querySelector('#ptsg [data-v="active"]').classList.add('on-active');bBayDrop();}
+function pickPCeil(el){cPCeil=el.dataset.v;document.querySelectorAll('#ptceil .so').forEach(function(o){o.className='so';});el.classList.add('on-'+(cPCeil==='none'?'no-ceil':cPCeil));}
+function pickPResus(el){cPResus=el.dataset.v;document.querySelectorAll('#ptresus .so').forEach(function(o){o.className='so';});el.classList.add('on-'+(cPResus==='for'?'for-resus':'not-resus'));}
+function rsPtF(){ePtId=null;cPS='active';cPCeil='none';cPResus='for';document.getElementById('ptftitle').textContent='Add patient';document.getElementById('ptbed').value='';document.getElementById('ptinit').value='';document.getElementById('ptdx').value='';document.querySelectorAll('#ptsg .so').forEach(function(o){o.className='so';});document.querySelector('#ptsg [data-v="active"]').classList.add('on-active');document.querySelectorAll('#ptceil .so').forEach(function(o){o.className='so';});document.querySelector('#ptceil [data-v="none"]').classList.add('on-no-ceil');document.querySelectorAll('#ptresus .so').forEach(function(o){o.className='so';});document.querySelector('#ptresus [data-v="for"]').classList.add('on-for-resus');bBayDrop();}
 function gAddPt(){rsPtF();sScr('s-pt');setTimeout(function(){document.getElementById('ptinit').focus();},250);}
 function savePt(){
   var init=document.getElementById('ptinit').value.trim().toUpperCase();
@@ -445,8 +528,8 @@ function savePt(){
   var bed=document.getElementById('ptbed').value.trim();
   var dx=document.getElementById('ptdx').value.trim();
   var wid=S.activeWardId||S.wards[0].id;
-  if(ePtId){var p=S.patients.find(function(p){return p.id===ePtId;});if(p){p.initials=init;p.bayId=bayId;p.bed=bed;p.dx=dx;p.status=cPS;}}
-  else{S.patients.push({id:S.nextPid++,wardId:wid,bayId:bayId,bed:bed,initials:init,dx:dx,status:cPS,collapsed:false,jobs:[]});}
+  if(ePtId){var p=S.patients.find(function(p){return p.id===ePtId;});if(p){p.initials=init;p.bayId=bayId;p.bed=bed;p.dx=dx;p.status=cPS;p.ceiling=cPCeil;p.resus=cPResus;}}
+  else{S.patients.push({id:S.nextPid++,wardId:wid,bayId:bayId,bed:bed,initials:init,dx:dx,status:cPS,ceiling:cPCeil,resus:cPResus,collapsed:false,jobs:[]});}
   sv();toast(ePtId?'Patient updated':'Patient added');gNav('tasks');
 }
 
@@ -537,11 +620,16 @@ function bPC(p){
       jh='<div class="jlist">'+sorted.map(function(j){return bJR(j,p.id);}).join('')+'</div>';
     }else{jh='<div class="jlist"><div class="nojobs">No jobs \u2014 tap + to add</div></div>';}
   }
+  var ceilBadge='';
+  if(p.ceiling==='l1') ceilBadge='<span class="ceil-badge ceil-l1">L1</span>';
+  else if(p.ceiling==='l2') ceilBadge='<span class="ceil-badge ceil-l2">L2</span>';
+  else if(p.ceiling==='l3') ceilBadge='<span class="ceil-badge ceil-l3">L3</span>';
+  var resusBadge=p.resus==='not'?'<span class="resus-badge resus-not">DNACPR</span>':'';
   return '<div class="'+cc+'" id="pc'+p.id+'">'
     +'<div class="ph" onclick="togPt('+p.id+')">'
     +'<div class="pbed">'+(e(p.bed)||'\u2014')+'</div>'
     +'<div class="pi"><div class="pname">'+e(p.initials)+'</div><div class="pdx">'+(e(p.dx)||'No diagnosis')+'</div></div>'
-    +'<div class="pr">'+sb+rat
+    +'<div class="pr">'+sb+ceilBadge+resusBadge+rat
     +'<div class="padd" onclick="event.stopPropagation();gAddJ('+p.id+')">+</div>'
     +'<span class="pmnu" onclick="event.stopPropagation();oPM('+p.id+')">&#x22EF;</span>'
     +'</div></div>'+jh+'</div>';
@@ -623,11 +711,13 @@ function pmS(st){var p=S.patients.find(function(p){return p.id===mPId;});if(!p)r
 function pmEdit(){
   var p=S.patients.find(function(p){return p.id===mPId;});if(!p)return;
   document.getElementById('pmod').classList.remove('open');
-  ePtId=p.id;cPS=p.status||'active';
+  ePtId=p.id;cPS=p.status||'active';cPCeil=p.ceiling||'none';cPResus=p.resus||'for';
   document.getElementById('ptftitle').textContent='Edit patient';
   bBayDrop();
   document.getElementById('ptbay').value=p.bayId||'';document.getElementById('ptbed').value=p.bed||'';document.getElementById('ptinit').value=p.initials||'';document.getElementById('ptdx').value=p.dx||'';
   document.querySelectorAll('#ptsg .so').forEach(function(o){o.className='so';});document.querySelector('#ptsg [data-v="'+cPS+'"]').classList.add('on-'+cPS);
+  document.querySelectorAll('#ptceil .so').forEach(function(o){o.className='so';});document.querySelector('#ptceil [data-v="'+cPCeil+'"]').classList.add('on-'+(cPCeil==='none'?'no-ceil':cPCeil));
+  document.querySelectorAll('#ptresus .so').forEach(function(o){o.className='so';});document.querySelector('#ptresus [data-v="'+cPResus+'"]').classList.add('on-'+(cPResus==='for'?'for-resus':'not-resus'));
   sScr('s-pt');
 }
 function pmDel(){if(!confirm('Delete this patient and all their jobs?'))return;S.patients=S.patients.filter(function(p){return p.id!==mPId;});sv();document.getElementById('pmod').classList.remove('open');rList();toast('Patient removed');}
@@ -643,47 +733,181 @@ function rWardSel(){
   }).join('');
 }
 function pickW(id){pWId=id;document.querySelectorAll('.wcd').forEach(function(c){c.classList.toggle('sel',c.id==='wcd'+id);});}
-function confirmW(){if(!pWId){toast('Select a ward');return;}S.activeWardId=pWId;sv();uPill();bBayDrop();toast('Ward set');gNav('tasks');}
+function confirmW(){if(!pWId){toast('Select a ward');return;}S.activeWardId=pWId;S.hoEntries=[];sv();uPill();bBayDrop();toast('Ward set');gNav('tasks');}
 
 // HANDOVER
-function showHO(){
-  var pts=aPts();if(!pts.length){toast('No patients');return;}
-  var w=gW();document.getElementById('hosub').textContent=(w?w.name:'Ward')+' \u00b7 '+pts.filter(function(p){return p.status==='discharge';}).length+' for discharge';
-  var secs=w?wSecs(w):[{id:'__all',name:'Patients'}];var html='';
+function rHo(){
+  if(!S.hoEntries)S.hoEntries=[];
+  var pts=aPts();
+  var w=gW();var secs=w?wSecs(w):[];
+  var count=document.getElementById('ho-count');
+  count.textContent=S.hoEntries.length?S.hoEntries.length+' entries':'';
+  var html='';
+  if(S.hoEntries.length){
+    html+='<button class="ho-sum-btn" onclick="showHoSum()">View &amp; copy handover summary</button>';
+  }
+  html+='<button class="ho-new-btn" onclick="addHoEntry(\'\',\'\',\'\')">+ Add patient manually</button>';
+  // patient picker grouped by bay
   secs.forEach(function(sec){
-    var sp=pts.filter(function(p){return p.bayId===sec.id&&(p.jobs||[]).some(function(j){return j.status!=='done';});});
-    if(!sp.length)return;
-    html+='<div class="hobay"><div class="hobt">'+e(sec.name)+'</div>';
+    var sp=pts.filter(function(p){return p.bayId===sec.id;});
+    if(!sp.length) return;
+    sp.sort(function(a,b){var an=parseInt((a.bed||'').replace(/\D/g,''),10),bn=parseInt((b.bed||'').replace(/\D/g,''),10);if(!isNaN(an)&&!isNaN(bn))return an-bn;return(a.bed||'').localeCompare(b.bed||'');});
+    html+='<div class="ho-pick-sec"><div class="ho-pick-lbl">'+e(sec.name)+'</div>';
     sp.forEach(function(p){
-      var out=(p.jobs||[]).filter(function(j){return j.status!=='done';});
-      var sl={active:'',mofd:' \u00b7 MOFD',discharge:' \u00b7 DISCHARGE TODAY'}[p.status]||'';
-      html+='<div class="hopt"><div class="hopth">'+e(p.initials)+(p.bed?' \u00b7 '+e(p.bed):'')+' <span style="font-size:11px;color:var(--text2);font-weight:400;">'+e(p.dx||'')+sl+'</span></div>';
-      out.forEach(function(j){html+='<div class="hoj '+j.status+'"><span style="'+jtSt(j.type)+';padding:1px 5px;border-radius:3px;font-size:9px;font-weight:600;">'+j.type.toUpperCase()+'</span> '+e(j.desc)+(j.waitingOn?' \u2014 waiting: '+e(j.waitingOn):'')+(j.notes?' ('+e(j.notes)+')':'')+'</div>';});
-      html+='</div>';
+      var outstanding=(p.jobs||[]).filter(function(j){return j.status!=='done';}).length;
+      var added=S.hoEntries.some(function(en){return en._ptId===p.id;});
+      html+='<div class="ho-pick-row">'
+        +'<div class="ho-pick-info">'
+        +'<div class="ho-pick-name">Bed '+e(p.bed||'\u2014')+(p.initials?' \u00b7 '+e(p.initials):'')+'</div>'
+        +'<div class="ho-pick-sub">'+(e(p.dx)||'No diagnosis')+' \u00b7 '+outstanding+' outstanding</div>'
+        +'</div>'
+        +(added
+          ?'<span style="font-size:11px;color:var(--text3);">Added</span>'
+          :'<span class="ho-add-ptbtn" onclick="addHoFromPt('+p.id+')">Add</span>')
+        +'</div>';
     });
     html+='</div>';
   });
-  document.getElementById('hocont').innerHTML=html||'<div style="color:var(--text3);padding:20px 0;font-size:14px;">All clear.</div>';
-  document.getElementById('homod').classList.add('open');
+  // existing entries
+  if(S.hoEntries.length){
+    html+='<div style="font-family:\'DM Mono\',monospace;font-size:11px;color:var(--text3);letter-spacing:.1em;text-transform:uppercase;margin:16px 0 10px;">Handover entries</div>';
+    S.hoEntries.forEach(function(en,i){html+=bHoEntry(en,i);});
+  }
+  document.getElementById('ho-scr').innerHTML=html;
 }
-function cHO(ev){if(ev.target===document.getElementById('homod'))document.getElementById('homod').classList.remove('open');}
-function copyHO(){
-  var w=gW();var pts=aPts();var secs=w?wSecs(w):[{id:'__all',name:'Patients'}];
-  var txt='WARD JOBS HANDOVER \u2014 '+(w?w.name.toUpperCase():'WARD')+'\n'+'\u2500'.repeat(40)+'\n\n';
-  secs.forEach(function(sec){
-    var sp=pts.filter(function(p){return p.bayId===sec.id;});if(!sp.length)return;
-    txt+=sec.name.toUpperCase()+'\n';
-    sp.forEach(function(p){
-      var out=(p.jobs||[]).filter(function(j){return j.status!=='done';});if(!out.length)return;
-      var sl={active:'',mofd:' [MOFD]',discharge:' [DISCHARGE TODAY]'}[p.status]||'';
-      txt+='  '+p.initials+(p.bed?' \u00b7 '+p.bed:'')+(p.dx?' \u2014 '+p.dx:'')+sl+'\n';
-      out.forEach(function(j){txt+='    ['+j.prio.toUpperCase()+'] '+j.type.toUpperCase()+' \u00b7 '+j.desc+(j.waitingOn?' [waiting: '+j.waitingOn+']':'')+(j.notes?' ('+j.notes+')':'')+'\n';});
-    });txt+='\n';
+
+function bHoEntry(en,i){
+  var ceilOpts=[{v:'none',l:'No ceiling',cls:'no-ceil'},{v:'l1',l:'Level 1',cls:'l1'},{v:'l2',l:'Level 2',cls:'l2'},{v:'l3',l:'Level 3',cls:'l3'}];
+  var resusOpts=[{v:'for',l:'For resus',cls:'for-resus'},{v:'not',l:'Not for resus',cls:'not-resus'}];
+  var ceilHtml=ceilOpts.map(function(o){return'<span class="ho-opt ho-ceil-'+i+' '+(en.ceiling===o.v?'on-'+o.cls:'')+'" data-val="'+o.v+'" onclick="setHoCeil('+i+',\''+o.v+'\')">'+o.l+'</span>';}).join('');
+  var resusHtml=resusOpts.map(function(o){return'<span class="ho-opt ho-resus-'+i+' '+(en.resus===o.v?'on-'+o.cls:'')+'" data-val="'+o.v+'" onclick="setHoResus('+i+',\''+o.v+'\')">'+o.l+'</span>';}).join('');
+  var jobsHtml=(en.jobs||[]).map(function(j,ji){return'<div class="ho-job-row"><span class="ho-job-txt">'+e(j)+'</span><span class="ho-job-del" onclick="rmHoJob('+i+','+ji+')">\u00d7</span></div>';}).join('');
+  return '<div class="ho-entry">'
+    +'<div class="ho-entry-hdr">'
+    +'<div><div class="ho-entry-name">'+(e(en.name)||'<span style="color:var(--text3)">No name</span>')+'</div>'
+    +'<div class="ho-entry-loc">'+e(en.bay||en.ward||'')+(en.bed&&en.bed!=='\u2014'?' \u00b7 Bed '+e(en.bed):'')+'</div></div>'
+    +'<span class="ho-entry-del" onclick="rmHoEntry('+i+')">\u00d7</span>'
+    +'</div>'
+    +'<div class="ho-entry-body">'
+    +'<div class="hof"><label>Name (initial + surname)</label><input type="text" value="'+e(en.name||'')+'" placeholder="e.g. J Smith" oninput="setHoF('+i+',\'name\',this.value)" autocomplete="off"></div>'
+    +'<div class="hof"><label>Bay / Bed</label>'
+    +'<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">'
+    +'<input type="text" value="'+e(en.bay||'')+'" placeholder="Bay" oninput="setHoF('+i+',\'bay\',this.value)" autocomplete="off">'
+    +'<input type="text" value="'+e(en.bed||'')+'" placeholder="Bed" oninput="setHoF('+i+',\'bed\',this.value)" autocomplete="off">'
+    +'</div></div>'
+    +'<div class="hof"><label>Admission details</label><input type="text" value="'+e(en.admission||'')+'" placeholder="e.g. 72F admitted with AKI" oninput="setHoF('+i+',\'admission\',this.value)" autocomplete="off"></div>'
+    +'<div class="ho-selects">'
+    +'<div class="ho-sel-grp"><div class="ho-sel-lbl">Ceiling of care</div><div class="ho-opts">'+ceilHtml+'</div></div>'
+    +'<div class="ho-sel-grp"><div class="ho-sel-lbl">Resus status</div><div class="ho-opts">'+resusHtml+'</div></div>'
+    +'</div>'
+    +'<div class="hof"><label>Where we are</label><textarea placeholder="Current situation, what\'s happened, what\'s pending..." oninput="setHoF('+i+',\'situation\',this.value)">'+e(en.situation||'')+'</textarea></div>'
+    +'<div class="hof"><label>Outstanding jobs</label>'+jobsHtml
+    +'<div class="ho-add-job-row"><input type="text" class="ho-add-job-inp" id="hoji'+i+'" placeholder="Add job..." autocomplete="off" onkeydown="if(event.key===\'Enter\')addHoJob('+i+')"><button class="ho-add-job-btn" onclick="addHoJob('+i+')">Add</button></div></div>'
+    +'<div class="hof"><label>Specific instructions</label><textarea placeholder="e.g. Repeat U&amp;Es at 06:00, call reg if sats drop..." oninput="setHoF('+i+',\'instructions\',this.value)">'+e(en.instructions||'')+'</textarea></div>'
+    +'</div></div>';
+}
+
+function addHoEntry(bay,bed,ptId){
+  if(!S.hoEntries)S.hoEntries=[];
+  S.hoEntries.push({_ptId:ptId||null,bay:bay||'',bed:bed||'',name:'',admission:'',ceiling:'none',resus:'for',situation:'',jobs:[],instructions:''});
+  sv();rHo();
+  setTimeout(function(){var sc=document.getElementById('ho-scr');if(sc)sc.scrollTop=sc.scrollHeight;},100);
+}
+
+function addHoFromPt(ptId){
+  var p=S.patients.find(function(p){return p.id===ptId;});if(!p)return;
+  var w=gW();var secs=w?wSecs(w):[];
+  var sec=secs.find(function(s){return s.id===p.bayId;});
+  var jobs=(p.jobs||[]).filter(function(j){return j.status!=='done';}).map(function(j){return j.type.toUpperCase()+': '+j.desc+(j.waitingOn?' [waiting: '+j.waitingOn+']':'');});
+  var ceilLabels={none:'No ceiling',l1:'Level 1',l2:'Level 2',l3:'Level 3'};
+  if(!S.hoEntries)S.hoEntries=[];
+  S.hoEntries.push({
+    _ptId:ptId,
+    bay:sec?sec.name:'',
+    bed:p.bed||'',
+    name:'',
+    admission:p.dx||'',
+    ceiling:p.ceiling||'none',
+    resus:p.resus||'for',
+    situation:'',
+    jobs:jobs,
+    instructions:'',
   });
-  var tot=pts.reduce(function(n,p){return n+(p.jobs||[]).length;},0);
-  var dn=pts.reduce(function(n,p){return n+(p.jobs||[]).filter(function(j){return j.status==='done';}).length;},0);
-  txt+='\u2500'.repeat(40)+'\n'+(tot-dn)+' outstanding \u00b7 '+dn+' completed';
-  navigator.clipboard.writeText(txt).then(function(){toast('Copied');}).catch(function(){toast('Copy failed');});
+  sv();rHo();
+  setTimeout(function(){var sc=document.getElementById('ho-scr');if(sc)sc.scrollTop=sc.scrollHeight;},100);
+}
+
+function setHoF(i,field,val){if(!S.hoEntries||!S.hoEntries[i])return;S.hoEntries[i][field]=val;sv();}
+
+function setHoCeil(i,val){
+  if(!S.hoEntries||!S.hoEntries[i])return;
+  S.hoEntries[i].ceiling=val;sv();
+  var map={none:'no-ceil',l1:'l1',l2:'l2',l3:'l3'};
+  document.querySelectorAll('.ho-ceil-'+i).forEach(function(btn){
+    btn.className='ho-opt ho-ceil-'+i;
+    if(btn.dataset.val===val)btn.classList.add('on-'+map[val]);
+  });
+}
+
+function setHoResus(i,val){
+  if(!S.hoEntries||!S.hoEntries[i])return;
+  S.hoEntries[i].resus=val;sv();
+  var map={for:'for-resus',not:'not-resus'};
+  document.querySelectorAll('.ho-resus-'+i).forEach(function(btn){
+    btn.className='ho-opt ho-resus-'+i;
+    if(btn.dataset.val===val)btn.classList.add('on-'+map[val]);
+  });
+}
+
+function addHoJob(i){
+  var inp=document.getElementById('hoji'+i);if(!inp)return;
+  var val=inp.value.trim();if(!val)return;
+  if(!S.hoEntries[i].jobs)S.hoEntries[i].jobs=[];
+  S.hoEntries[i].jobs.push(val);inp.value='';sv();rHo();
+}
+
+function rmHoJob(i,ji){if(!S.hoEntries[i])return;S.hoEntries[i].jobs.splice(ji,1);sv();rHo();}
+function rmHoEntry(i){if(!confirm('Remove this entry?'))return;S.hoEntries.splice(i,1);sv();rHo();}
+
+function showHoSum(){
+  if(!S.hoEntries||!S.hoEntries.length){toast('No entries');return;}
+  var w=gW();
+  document.getElementById('ho-sum-sub').textContent=(w?w.name:'Ward')+' \u00b7 '+S.hoEntries.length+' patient'+(S.hoEntries.length!==1?'s':'');
+  var ceilL={none:'No ceiling',l1:'Level 1 ceiling',l2:'Level 2 ceiling (HDU)',l3:'Level 3 ceiling (ITU)'};
+  var resusL={for:'For resus',not:'Not for resus (DNACPR)'};
+  var html=S.hoEntries.map(function(en){
+    return '<div class="ho-sum-entry">'
+      +'<div class="ho-sum-name">'+(e(en.name)||'Unnamed')+'</div>'
+      +'<div class="ho-sum-loc">'+e(en.bay||'')+' '+e(en.bed||'')+'</div>'
+      +(en.admission?'<div class="ho-sum-line"><span>Admission:</span> '+e(en.admission)+'</div>':'')
+      +'<div class="ho-sum-line"><span>Ceiling:</span> '+(ceilL[en.ceiling]||'Not set')+' &nbsp;&middot;&nbsp; <span>Resus:</span> '+(resusL[en.resus]||'Not set')+'</div>'
+      +(en.situation?'<div class="ho-sum-line"><span>Situation:</span> '+e(en.situation)+'</div>':'')
+      +((en.jobs||[]).length?'<div class="ho-sum-line"><span>Jobs:</span> '+en.jobs.map(function(j){return e(j);}).join('; ')+'</div>':'')
+      +(en.instructions?'<div class="ho-sum-line"><span>Instructions:</span> '+e(en.instructions)+'</div>':'')
+      +'</div>';
+  }).join('');
+  document.getElementById('ho-sum-content').innerHTML=html;
+  document.getElementById('ho-sum-mod-bg').classList.add('open');
+}
+
+function cHoSum(ev){if(ev.target===document.getElementById('ho-sum-mod-bg'))document.getElementById('ho-sum-mod-bg').classList.remove('open');}
+
+function copyHoSum(){
+  if(!S.hoEntries||!S.hoEntries.length)return;
+  var w=gW();
+  var ceilL={none:'No ceiling',l1:'Level 1 ceiling',l2:'Level 2 ceiling (HDU)',l3:'Level 3 ceiling (ITU)'};
+  var resusL={for:'For resus',not:'Not for resus (DNACPR)'};
+  var txt='WARD HANDOVER \u2014 '+(w?w.name.toUpperCase():'WARD')+'\n'+'\u2500'.repeat(40)+'\n\n';
+  S.hoEntries.forEach(function(en,i){
+    txt+=(i+1)+'. '+(en.name||'Unnamed')+' \u2014 '+en.bay+' Bed '+en.bed+'\n';
+    if(en.admission)txt+='   Admission: '+en.admission+'\n';
+    txt+='   Ceiling: '+(ceilL[en.ceiling]||'Not set')+' | Resus: '+(resusL[en.resus]||'Not set')+'\n';
+    if(en.situation)txt+='   Situation: '+en.situation+'\n';
+    if((en.jobs||[]).length)txt+='   Jobs: '+en.jobs.join('; ')+'\n';
+    if(en.instructions)txt+='   Instructions: '+en.instructions+'\n';
+    txt+='\n';
+  });
+  navigator.clipboard.writeText(txt).then(function(){toast('Handover copied');}).catch(function(){toast('Copy failed');});
 }
 
 // SETTINGS
