@@ -708,7 +708,16 @@ function rWardSel(){
   }).join('');
 }
 function pickW(id){pWId=id;document.querySelectorAll('.wcd').forEach(function(c){c.classList.toggle('sel',c.id==='wcd'+id);});}
-function confirmW(){if(!pWId){toast('Select a ward');return;}S.activeWardId=pWId;S.hoEntries=[];sv();uPill();bBayDrop();toast('Ward set');gNav('tasks');}
+function confirmW(){
+  if(!pWId){toast('Select a ward');return;}
+  S.activeWardId=pWId;
+  S.hoEntries=[];
+  // clear done jobs for fresh day
+  S.patients.forEach(function(p){
+    p.jobs=(p.jobs||[]).filter(function(j){return j.status!=='done';});
+  });
+  sv();uPill();bBayDrop();toast('Ward set');gNav('tasks');
+}
 
 function rHO(){
   if(!S.hoEntries)S.hoEntries=[];
