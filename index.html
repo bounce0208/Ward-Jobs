@@ -609,14 +609,15 @@ function bPC(p){
     +'<div class="ph" onclick="togPt('+p.id+')">'
     +'<div class="pbed">'+(e(p.bed)||'\u2014')+'</div>'
     +'<div class="pi">'
-    +'<div style="display:flex;align-items:center;gap:6px;">'
-    +'<div class="pname">'+e(p.initials)+'</div>'
-    +'<div class="pr">'+sb+ceilBadge+resBadge+rat
-    +'<div class="padd" onclick="event.stopPropagation();gAddJ('+p.id+')">+</div>'
-    +'<span class="pmnu" onclick="event.stopPropagation();oPM('+p.id+')">&#x22EF;</span>'
-    +'</div>'
+    +'<div style="display:flex;align-items:center;gap:5px;flex-wrap:wrap;">'
+    +'<span class="pname">'+e(p.initials)+'</span>'
+    +sb+ceilBadge+resBadge+rat
     +'</div>'
     +(p.dx?'<div style="font-size:12px;color:var(--text2);font-style:italic;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">'+e(p.dx)+'</div>':'')
+    +'</div>'
+    +'<div style="display:flex;align-items:center;gap:5px;flex-shrink:0;">'
+    +'<div class="padd" onclick="event.stopPropagation();gAddJ('+p.id+')">+</div>'
+    +'<span class="pmnu" onclick="event.stopPropagation();oPM('+p.id+')">&#x22EF;</span>'
     +'</div>'
     +'</div>'+jh+'</div>';
 }
