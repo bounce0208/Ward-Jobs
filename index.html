@@ -608,11 +608,17 @@ function bPC(p){
   return '<div class="'+cc+'" id="pc'+p.id+'">'
     +'<div class="ph" onclick="togPt('+p.id+')">'
     +'<div class="pbed">'+(e(p.bed)||'\u2014')+'</div>'
-    +'<div class="pi"><div class="pname">'+e(p.initials)+'</div><div class="pdx">'+(e(p.dx)||'No diagnosis')+'</div></div>'
+    +'<div class="pi">'
+    +'<div style="display:flex;align-items:center;gap:6px;">'
+    +'<div class="pname">'+e(p.initials)+'</div>'
     +'<div class="pr">'+sb+ceilBadge+resBadge+rat
     +'<div class="padd" onclick="event.stopPropagation();gAddJ('+p.id+')">+</div>'
     +'<span class="pmnu" onclick="event.stopPropagation();oPM('+p.id+')">&#x22EF;</span>'
-    +'</div></div>'+jh+'</div>';
+    +'</div>'
+    +'</div>'
+    +(p.dx?'<div style="font-size:12px;color:var(--text2);font-style:italic;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">'+e(p.dx)+'</div>':'')
+    +'</div>'
+    +'</div>'+jh+'</div>';
 }
 
 function bJR(j,pid){
